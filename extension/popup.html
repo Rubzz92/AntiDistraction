@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Focus Timer</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 15px;
+      width: 220px;
+      text-align: center;
+    }
+    input, button {
+      width: 100%;
+      margin-top: 8px;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<h3>Focus Timer</h3>
+
+<label>Minutes:</label>
+<input type="number" id="minutes" min="1" value="1">
+
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+<p id="status"></p>
+
+<script src="popup.js"></script>
+</body>
+</html>

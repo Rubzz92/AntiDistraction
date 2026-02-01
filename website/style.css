@@ -1,0 +1,211 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Segoe UI", Tahoma, sans-serif;
+}
+
+/* VARIABLES */
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #222;
+  --primary: #5a67ff;
+  --danger: #ff4d4d;
+  --border: #ddd;
+}
+
+body.dark {
+  --bg: #0f1220;
+  --card: #1a1d35;
+  --text: #ffffff;
+  --border: #2a2e55;
+}
+
+/* BODY */
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body.dark {
+  background: linear-gradient(135deg, #141e30, #243b55);
+}
+
+/* MAIN CARD */
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: white;
+  width: 340px;
+  text-align: center;
+}
+
+body.dark .container {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.title {
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* MODE BUTTON */
+.mode-btn {
+  background: none;
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* INPUTS */
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  outline: none;
+  background: transparent;
+  color: white;
+}
+
+/* BUTTONS */
+.btn-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+  flex: 1;
+}
+
+#startBtn {
+  background: #00c9ff;
+  color: white;
+}
+
+#stopBtn {
+  background: #ff4b5c;
+  color: white;
+}
+
+#pauseBtn {
+  background: #f9a825;
+  color: white;
+}
+
+#pomodoroBtn {
+  background: #7f00ff;
+  color: white;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* STATUS */
+#status {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+/* BLOCKED INFO BADGE */
+.blocked-info {
+  font-size: 13px;
+  background: rgba(255,0,0,0.2);
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+/* FOCUS SCREEN */
+#focusScreen {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #1d2671, #c33764);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  z-index: 999;
+
+  opacity: 0;
+  transform: scale(0.95);
+  transition: 0.4s ease;
+}
+
+#focusScreen.active {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+}
+
+#focusScreen h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+#countdown {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+/* PROGRESS BAR */
+#progressContainer {
+  width: 70%;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00ffcc, #00c6ff, #7f00ff);
+  background-size: 300% 300%;
+  animation: gradientMove 3s ease infinite;
+  transition: width 1s linear;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* HIDDEN */
+.hidden {
+  display: none;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 15px;
+  font-size: 12px;
+  opacity: 0.7;
+}
